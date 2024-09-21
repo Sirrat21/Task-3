@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop Discount</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cfcaca;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(75, 42, 42, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #594d68;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #d4ced1;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #767780;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Check Discount</h2>
+        <label for="age">Enter your age:</label>
+        <input type="number" id="age" >
+        <button onclick="checkDiscount()">Check Discount</button>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        function checkDiscount() {
+            let age = document.getElementById('age').value;
+            age = age ? parseInt(age) : 0;
+            let result = document.getElementById('result');
+            if (age >= 65) {
+                result.innerHTML = "You get a 10% discount!";
+            } else if (age >= 18 && age <= 25) {
+                result.innerHTML = "You get a 5% discount!";
+            } else {
+                result.innerHTML = "No discount";
+            }
+        }
+    </script>
+</body>
+</html>
